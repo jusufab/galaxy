@@ -32,6 +32,10 @@ html {
   scroll-padding-top: 7rem;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 html::-webkit-scrollbar {
   width: 1rem;
 }
@@ -41,7 +45,7 @@ html::-webkit-scrollbar-track {
 }
 
 html::-webkit-scrollbar-thumb {
-  background: var(--yellow);
+  background: var(--blue);
 }
 
 section {
@@ -97,8 +101,8 @@ section {
 }
 
 .header {
-  position: -webkit-sticky;
-  position: sticky;
+  position: -webkit-fixed;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -128,9 +132,19 @@ section {
 .header .logo span {
   color: var(--blue);
 }
+.header .logo .stars {
+  margin-left: 25px;
+  position: absolute;
+  top: 13px;
+  font-weight: 10px;
+  font-size: 10px;
+  color: var(--blue);
+}
+
 
 .header .navbar a {
   font-size: 2rem;
+  font-weight: bold;
   color: var(--black);
   text-transform: capitalize;
   margin: 0 1rem;
@@ -258,7 +272,7 @@ section {
 }
 
 .contact-info .share a:hover {
-  background: var(--yellow);
+  background: var(--red);
   color: var(--white);
 }
 
@@ -550,7 +564,7 @@ section {
 .projects .box-container .box .content i {
   width: 7.5rem;
   font-size: 3rem;
-  background: var(--yellow);
+  background: var(--blue);
   color: var(--white);
   cursor: pointer;
   text-align: center;
@@ -694,37 +708,47 @@ section {
   width: 100%;
 }
 
-.contact .row form {
+.contact .row .contact-information {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 41rem;
           flex: 1 1 41rem;
-  background: var(--white);
+          
   padding: 2rem;
 }
+.contact .row .contact-information .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
 
-.contact .row form h3 {
-  font-size: 2.5rem;
-  color: var(--black);
+
+.contact .row .contact-information .info i {
+  height: 5rem;
+  width: 5rem;
+  font-size: 2rem;
+  color: #f12121;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.contact .row .contact-information h3 {
+  font-size: 2rem;
+  color: var(--white);
+  margin-bottom: 1rem;
   text-transform: capitalize;
 }
-
-.contact .row form .box {
-  margin: .7rem 0;
-  width: 100%;
-  padding: 1.5rem 0;
-  border-bottom: var(--border);
-  font-size: 1.6rem;
-  color: var(--light-color);
+.contact .row .contact-information p {
+  font-size: 2rem;
+  color: var(--white);
+  margin-bottom: 1rem;
+  
 }
 
-.contact .row form .box:focus {
-  border-color: var(--red);
-}
-
-.contact .row form textarea {
-  height: 15rem;
-  resize: none;
-}
 
 .blogs {
   background: var(--light-bg);
@@ -789,6 +813,7 @@ section {
       -ms-user-select: none;
           user-select: none;
 }
+
 
 .footer {
   text-align: center;
@@ -886,12 +911,14 @@ section {
     width: 360px;
     height: auto;
   }
+
 }
 
 @media (max-width: 450px) {
   html {
     font-size: 50%;
   }
+
   .about .row .content h3 {
     font-size: 2.5rem;
   }
@@ -921,6 +948,7 @@ section {
     width: 360px;
     height: auto;
   }
+
 }
 .swiper-container {
   height: 100%;
