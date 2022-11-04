@@ -88,7 +88,7 @@ var swiper = new Swiper(".logo-slider", {
 });
 var swiper = new Swiper('.swiper-container', {
    effect: 'flip',
-   loop:true,
+   loop: true,
    grabCursor: true,
    flipEffect: {
        rotate: 230,
